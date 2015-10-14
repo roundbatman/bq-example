@@ -1,24 +1,14 @@
-App Engine Java Guestbook
-Copyright (C) 2010-2012 Google Inc.
+## Testing with App Engine and Bigquery
 
-## Sample guestbook for use with App Engine Java.
+Before starting add required stuff to src/main/java/org/github/roundbatman/bq/UsedToBeGuiceModule.java
 
-Requires [Apache Maven](http://maven.apache.org) 3.1 or greater, and JDK 7+ in order to run.
+    private static final String BQ_SERVICE_ACCOUNT = "";
+    private static final String GCP_PROJECT = "";
 
-To build, run
+And replace src/main/resources/key.p12 with a proper file.
 
-    mvn package
-
-Building will run the tests, but to explicitly run tests you can use the test target
-
-    mvn test
-
-To start the app, use the [App Engine Maven Plugin](http://code.google.com/p/appengine-maven-plugin/) that is already included in this demo.  Just run the command.
+Start App Engine on local machine and access http://localhost:8080 for sample query
 
     mvn appengine:devserver
 
-For further information, consult the [Java App Engine](https://developers.google.com/appengine/docs/java/overview) documentation.
-
-To see all the available goals for the App Engine plugin, run
-
-    mvn help:describe -Dplugin=appengine
+Standalone test case can be found from file BigQueryClientTest.java
